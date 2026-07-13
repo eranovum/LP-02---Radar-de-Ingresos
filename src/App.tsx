@@ -13,7 +13,12 @@ import {
   Info,
   TrendingUp,
   Award,
-  AlertCircle
+  AlertCircle,
+  BookOpen,
+  GraduationCap,
+  Cpu,
+  Calendar,
+  Users
 } from 'lucide-react';
 import DiagnosticSimulator from './components/DiagnosticSimulator';
 import CheckoutModal from './components/CheckoutModal';
@@ -38,26 +43,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950 overflow-x-hidden antialiased">
       
-      {/* Floating Trust Header (Desktop & Mobile optimized) */}
-      <header className="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-900/60 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            {/* Logo removed per request */}
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-widest text-slate-400">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" /> Pago 100% Seguro
-            </span>
-            <button
-              onClick={() => scrollToSection('ofertas')}
-              className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider rounded-xl transition duration-200"
-            >
-              Comenzar Ahora
-            </button>
-          </div>
-        </div>
-      </header>
-
       {/* BLOCK 1: Hero Section (DARK Background) */}
       <section className="relative pt-8 pb-16 sm:pb-24 lg:pt-16 lg:pb-32 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 overflow-hidden">
         {/* Glow Effects */}
@@ -386,16 +371,25 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Bonus 1 */}
-            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition flex flex-col justify-between">
+            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700/80 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent pointer-events-none" />
               <div>
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-[10px] uppercase font-bold tracking-widest bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-1 rounded text-emerald-400">
+                {/* Visual Icon Container (Comes FIRST) */}
+                <div className="mb-4">
+                  <div className="inline-flex p-4 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/30 rounded-2xl text-primary shadow-lg shadow-primary/5 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-primary/20">
+                    <BookOpen className="w-8 h-8" />
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center mb-5">
+                  <span className="text-[10px] uppercase font-extrabold tracking-widest bg-primary/10 border border-primary/25 px-2.5 py-1 rounded text-primary">
                     Bono 1
                   </span>
-                  <span className="text-xs font-bold text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
+                  <span className="text-xs font-bold text-rose-400/90 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
                     Valor: $39
                   </span>
                 </div>
+
                 <h3 className="text-base sm:text-lg font-bold text-white mb-3">Biblioteca de 50 Ideas de Negocios Validadas</h3>
                 <p className="text-xs text-slate-400 mb-4 leading-relaxed">
                   Descubre oportunidades clasificadas por inversión inicial, dificultad y tiempo requerido.
@@ -403,7 +397,7 @@ export default function App() {
                 <div className="space-y-1.5 border-t border-slate-950/80 pt-4">
                   {['Negocios desde cero', 'Modelos con baja inversión', 'Ideas para trabajar desde casa', 'Compatible con empleo completo'].map((b) => (
                     <div key={b} className="flex items-center gap-1.5 text-xs text-slate-300">
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                      <CheckCircle className="w-3.5 h-3.5 text-accent" />
                       <span>{b}</span>
                     </div>
                   ))}
@@ -415,16 +409,25 @@ export default function App() {
             </div>
 
             {/* Bonus 2 */}
-            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition flex flex-col justify-between">
+            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700/80 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent pointer-events-none" />
               <div>
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-[10px] uppercase font-bold tracking-widest bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-1 rounded text-emerald-400">
+                {/* Visual Icon Container (Comes FIRST) */}
+                <div className="mb-4">
+                  <div className="inline-flex p-4 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/30 rounded-2xl text-primary shadow-lg shadow-primary/5 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-primary/20">
+                    <GraduationCap className="w-8 h-8" />
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center mb-5">
+                  <span className="text-[10px] uppercase font-extrabold tracking-widest bg-primary/10 border border-primary/25 px-2.5 py-1 rounded text-primary">
                     Bono 2
                   </span>
-                  <span className="text-xs font-bold text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
+                  <span className="text-xs font-bold text-rose-400/90 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
                     Valor: $67
                   </span>
                 </div>
+
                 <h3 className="text-base sm:text-lg font-bold text-white mb-3">Curso: Cómo Validar una Idea Sin Perder Dinero</h3>
                 <p className="text-xs text-slate-400 mb-4 leading-relaxed">
                   Aprende a comprobar si un negocio realmente tiene potencial antes de invertir meses de trabajo.
@@ -432,7 +435,7 @@ export default function App() {
                 <div className="space-y-1.5 border-t border-slate-950/80 pt-4">
                   {['Investigación de mercado', 'Validación rápida', 'Errores que debes evitar', 'Cómo encontrar demanda real'].map((b) => (
                     <div key={b} className="flex items-center gap-1.5 text-xs text-slate-300">
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                      <CheckCircle className="w-3.5 h-3.5 text-accent" />
                       <span>{b}</span>
                     </div>
                   ))}
@@ -444,16 +447,25 @@ export default function App() {
             </div>
 
             {/* Bonus 3 */}
-            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition flex flex-col justify-between">
+            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700/80 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent pointer-events-none" />
               <div>
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-[10px] uppercase font-bold tracking-widest bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-1 rounded text-emerald-400">
+                {/* Visual Icon Container (Comes FIRST) */}
+                <div className="mb-4">
+                  <div className="inline-flex p-4 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/30 rounded-2xl text-primary shadow-lg shadow-primary/5 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-primary/20">
+                    <Cpu className="w-8 h-8" />
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center mb-5">
+                  <span className="text-[10px] uppercase font-extrabold tracking-widest bg-primary/10 border border-primary/25 px-2.5 py-1 rounded text-primary">
                     Bono 3
                   </span>
-                  <span className="text-xs font-bold text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
+                  <span className="text-xs font-bold text-rose-400/90 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
                     Valor: $49
                   </span>
                 </div>
+
                 <h3 className="text-base sm:text-lg font-bold text-white mb-3">Pack de 200 Prompts de IA para Emprendedores</h3>
                 <p className="text-xs text-slate-400 mb-4 leading-relaxed">
                   Prompts listos para usar con ChatGPT y otras herramientas de IA de vanguardia.
@@ -461,7 +473,7 @@ export default function App() {
                 <div className="space-y-1.5 border-t border-slate-950/80 pt-4">
                   {['Investigación de nichos', 'Ideas de productos', 'Creación de contenido', 'Ventas y Automatización'].map((b) => (
                     <div key={b} className="flex items-center gap-1.5 text-xs text-slate-300">
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                      <CheckCircle className="w-3.5 h-3.5 text-accent" />
                       <span>{b}</span>
                     </div>
                   ))}
@@ -473,16 +485,25 @@ export default function App() {
             </div>
 
             {/* Bonus 4 */}
-            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition flex flex-col justify-between md:col-span-1 lg:col-span-1">
+            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700/80 transition-all duration-300 flex flex-col justify-between md:col-span-1 lg:col-span-1 group relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent pointer-events-none" />
               <div>
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-[10px] uppercase font-bold tracking-widest bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-1 rounded text-emerald-400">
+                {/* Visual Icon Container (Comes FIRST) */}
+                <div className="mb-4">
+                  <div className="inline-flex p-4 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/30 rounded-2xl text-primary shadow-lg shadow-primary/5 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-primary/20">
+                    <Calendar className="w-8 h-8" />
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center mb-5">
+                  <span className="text-[10px] uppercase font-extrabold tracking-widest bg-primary/10 border border-primary/25 px-2.5 py-1 rounded text-primary">
                     Bono 4
                   </span>
-                  <span className="text-xs font-bold text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
+                  <span className="text-xs font-bold text-rose-400/90 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
                     Valor: $27
                   </span>
                 </div>
+
                 <h3 className="text-base sm:text-lg font-bold text-white mb-3">Sistema de Organización de 30 Días</h3>
                 <p className="text-xs text-slate-400 mb-4 leading-relaxed">
                   Una plantilla lista para ejecutar tu plan de acción diario sin perder jamás el enfoque.
@@ -490,7 +511,7 @@ export default function App() {
                 <div className="space-y-1.5 border-t border-slate-950/80 pt-4">
                   {['Calendario de ejecución', 'Seguimiento semanal', 'Objetivos diarios', 'Control de progreso visual'].map((b) => (
                     <div key={b} className="flex items-center gap-1.5 text-xs text-slate-300">
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                      <CheckCircle className="w-3.5 h-3.5 text-accent" />
                       <span>{b}</span>
                     </div>
                   ))}
@@ -502,16 +523,25 @@ export default function App() {
             </div>
 
             {/* Bonus 5 */}
-            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition flex flex-col justify-between md:col-span-2 lg:col-span-2">
+            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-slate-700/80 transition-all duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-2 group relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent pointer-events-none" />
               <div>
-                <div className="flex justify-between items-start mb-4">
-                  <span className="text-[10px] uppercase font-bold tracking-widest bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-1 rounded text-emerald-400">
+                {/* Visual Icon Container (Comes FIRST) */}
+                <div className="mb-4">
+                  <div className="inline-flex p-4 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/30 rounded-2xl text-primary shadow-lg shadow-primary/5 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-primary/20">
+                    <Users className="w-8 h-8" />
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center mb-5">
+                  <span className="text-[10px] uppercase font-extrabold tracking-widest bg-primary/10 border border-primary/25 px-2.5 py-1 rounded text-primary">
                     Bono 5
                   </span>
-                  <span className="text-xs font-bold text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
+                  <span className="text-xs font-bold text-rose-400/90 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20 line-through">
                     Valor: $97
                   </span>
                 </div>
+
                 <h3 className="text-base sm:text-lg font-bold text-white mb-3">Curso Express: Consigue tus Primeros Clientes</h3>
                 <p className="text-xs text-slate-400 mb-4 leading-relaxed">
                   Aprende a generar tus primeras ventas desde cero absoluto, incluso si todavía no tienes audiencia construida.
@@ -519,7 +549,7 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 border-t border-slate-950/80 pt-4">
                   {['Estrategias orgánicas efectivas', 'Uso óptimo de Redes Sociales', 'Mensajes y guiones de venta', 'Tácticas de conversión inmediata'].map((b) => (
                     <div key={b} className="flex items-center gap-1.5 text-xs text-slate-300">
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                      <CheckCircle className="w-3.5 h-3.5 text-accent" />
                       <span>{b}</span>
                     </div>
                   ))}
