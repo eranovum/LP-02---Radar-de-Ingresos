@@ -1,0 +1,6 @@
+{
+  "name": "Radar de Ingresos",
+  "description": "Landing page de ventas de alta conversión para Radar de Ingresos, con un simulador interactivo de diagnóstico para determinar la compatibilidad con modelos de negocio digitales.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
